@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#"
+     xml:base="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:j.1="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#"
+     xmlns:j.0="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Segment.owl#"
+     xmlns:j.3="http://www.opengis.net/ont/gml#"
+     xmlns:j.2="http://www.opengis.net/ont/geosparql#">
+    <owl:Ontology rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl">
+        <owl:imports rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Segment.owl"/>
+        <owl:imports rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl"/>
+        <owl:imports rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Event.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#connects -->
+
+    <owl:ObjectProperty rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#connects">
+        <rdfs:domain rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PathConnection"/>
+        <rdfs:range rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IndirectNeighbors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#hasPath -->
+
+    <owl:ObjectProperty rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#hasPath">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PathConnection"/>
+        <rdfs:range rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#hasRegion -->
+
+    <owl:ObjectProperty rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#hasRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IndirectNeighbors"/>
+        <rdfs:range rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Bridge -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Bridge">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Building -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Building">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#ManmadeRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#CityHall -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#CityHall">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#College -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#College">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Education"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Dirt -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Dirt">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#GroundArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Education -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Education">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#FireStation -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#FireStation">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Forest -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Forest">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#VegetationArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Ground -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Ground">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#GroundArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#GroundArea -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#GroundArea">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#HealthCenter -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#HealthCenter">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Highway -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Highway">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Hospital -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Hospital">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#HealthCenter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IceHall -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IceHall">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#SportHall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IndirectNeighbors -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IndirectNeighbors">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#hasRegion"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Industry -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Industry">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Lake -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Lake">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#ManmadeRegion -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#ManmadeRegion">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Ocean -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Ocean">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Park -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Park">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#ManmadeRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#VegetationArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Parking -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Parking">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PavedArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PathConnection -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PathConnection">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#connects"/>
+                <owl:someValuesFrom rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#IndirectNeighbors"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#hasPath"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PavedArea -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PavedArea">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#GroundArea"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#ManmadeRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PoliceStation -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PoliceStation">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#RailRoad -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#RailRoad">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#ManmadeRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Residence -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Residence">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#RidingHall -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#RidingHall">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#SportHall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#River -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#River">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#RiverConnection -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#RiverConnection">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PathConnection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Road -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Road">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PavedArea"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#School -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#School">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Education"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Sea -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Sea">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#NaturalRegion"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Shore -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Shore">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#GroundArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Sidewalk -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Sidewalk">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#PavedArea"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#SportHall -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#SportHall">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Street -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Street">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#TrainStation -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#TrainStation">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#EnrichedBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#University -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#University">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Education"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Unknown -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Unknown">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Vegetation -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Vegetation">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#VegetationArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#VegetationArea -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#VegetationArea">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Water -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Water">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#WaterArea">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way"/>
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way -->
+
+    <owl:Class rdf:about="http://semrob-ontology.mpi.aass.oru.se/OntoCity.owl#Way">
+        <rdfs:subClassOf rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Event.owl#Area -->
+
+    <rdf:Description rdf:about="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Event.owl#Area">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#sfOverlaps"/>
+                <owl:someValuesFrom rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#sfOverlaps"/>
+                <owl:someValuesFrom rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Segment.owl#Segment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Segment.owl#Segment -->
+
+    <rdf:Description rdf:about="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Segment.owl#Segment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#sfOverlaps"/>
+                <owl:someValuesFrom rdf:resource="http://semrob-ontology.mpi.aass.oru.se/patterns/OntoCity_Region.owl#Region"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
